@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <FormComponent :addUser="addUser" />
+    <FormComponent :addUser="addUser" :emptyTable="emptyTable" />
     <TableComponent :users="users" />
   </div>
 </template>
@@ -23,6 +23,9 @@ export default {
   methods: {
     addUser: function (user) {
       this.users.push(user);
+    },
+    emptyTable: function () {
+      this.users = [];
     },
   },
 };

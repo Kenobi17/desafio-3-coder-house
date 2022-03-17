@@ -84,6 +84,9 @@
         <button type="submit" class="btn btn-primary btn-block">
           Agregar usuario
         </button>
+        <button @click="emptyTable" class="btn btn-danger btn-block">
+          Vaciar tabla
+        </button>
       </form>
     </div>
   </div>
@@ -94,6 +97,7 @@ export default {
   name: 'FormComponent',
   props: {
     addUser: Function,
+    emptyTable: Function,
   },
   data: function () {
     return {
