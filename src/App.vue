@@ -1,19 +1,31 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <FormComponent :addUser="addUser" />
+    <TableComponent :users="users" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TableComponent from './components/TableComponent.vue';
+import FormComponent from './components/FormComponent.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    TableComponent,
+    FormComponent,
+  },
+  data: function () {
+    return {
+      users: [],
+    };
+  },
+  methods: {
+    addUser: function (user) {
+      this.users.push(user);
+    },
+  },
+};
 </script>
 
 <style>
